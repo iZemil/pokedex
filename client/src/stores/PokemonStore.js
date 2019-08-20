@@ -1,8 +1,6 @@
 import { observable, action, set, computed } from 'mobx';
 import { bind } from 'decko';
 
-import api from 'utils/api';
-
 class PokemonStore {
     constructor(stores) {
         this.stores = stores;
@@ -47,9 +45,10 @@ class PokemonStore {
 
         const { page, perPage } = this.pokemonsList;
         const offset = (page - 1) * perPage;
-        const data = await api.get(
-            `/pokemon/?offset=${offset}&limit=${perPage}`
+        const res = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${perPage}`
         );
+        const data = await res.json();
         const { results, count } = data;
 
         let list = [];

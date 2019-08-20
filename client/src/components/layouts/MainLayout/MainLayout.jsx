@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Layout } from 'antd';
 
+import Header from './Header';
+
 import './MainLayout.styl';
 
 const { Content } = Layout;
@@ -9,7 +11,7 @@ const { Content } = Layout;
 function MainLayout({ children }) {
     return (
         <Layout className="main-layout">
-            {/* Header /> */}
+            <Header />
 
             <Content className="main-layout__main">{children}</Content>
         </Layout>

@@ -6,9 +6,8 @@ async function request(method, path, body = {}) {
     const options = {
         headers: {
             'Content-Type': 'application/json',
-            'x-access-token': ll.get(USER_TOKEN)
-            // credentials: 'omit'
-            // credentials: 'same-origin'
+            mode: 'cors',
+            credentials: 'include'
         }
     };
 

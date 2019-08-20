@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { Table, Tag, Pagination } from 'antd';
+import { Table, Tag, Pagination, Icon } from 'antd';
 
 import { POKEMON_TYPES } from 'utils/constants/pokemon';
 
@@ -18,7 +18,23 @@ const columns = [
         key: 'name',
         render: (name, row) => (
             <div key={name}>
-                <div className="pokemon-list__name">{name}</div>
+                <div className="pokemon-list__name">
+                    {name}{' '}
+                    <Icon
+                        type="star"
+                        // and switcher color
+                        // style={{ color: 'yellow' }}
+                        onClick={() =>
+                            fetch('http://localhost:8080/pokemon', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ pokemon: name })
+                            })
+                        }
+                    />
+                </div>
                 <div className="pokemon-list__pic">
                     {row.pic ? <img src={row.pic} alt={name} /> : '???'}
                 </div>

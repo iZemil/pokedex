@@ -1,0 +1,118 @@
+$size = 85px
+$color = #001529
+$animationDuration = 2000ms
+$delayModifier = $animationDuration * 0.05
+
+.spinner
+    height: $size
+    width: $size
+    position: relative
+    transform: rotate(45deg)
+
+    &-wrapper
+        padding 40px 20px
+        display flex
+        justify-content center
+        align-items center
+
+    .rhombus
+        height: "calc(%s / 7.5)" % $size
+        width: "calc(%s / 7.5)" % $size
+        animation-duration: $animationDuration
+        top: "calc(%s / 2.3077)" % $size
+        left: "calc(%s / 2.3077)" % $size
+        background-color: $color
+        position: absolute
+        animation-iteration-count: infinite
+
+        &:nth-child(2n + 0)
+            margin-right: 0
+
+        &.child-1
+            animation-name: breeding-rhombus-spinner-animation-child-1
+            animation-delay: "calc(%s * 1)" % $delayModifier
+
+        &.child-2
+            animation-name: breeding-rhombus-spinner-animation-child-2
+            animation-delay: "calc(%s * 2)" % $delayModifier
+
+        &.child-3
+            animation-name: breeding-rhombus-spinner-animation-child-3
+            animation-delay: "calc(%s * 3)" % $delayModifier
+
+        &.child-4
+            animation-name: breeding-rhombus-spinner-animation-child-4
+            animation-delay: "calc(%s * 4)" % $delayModifier
+
+        &.child-5
+            animation-name: breeding-rhombus-spinner-animation-child-5
+            animation-delay: "calc(%s * 5)" % $delayModifier
+
+        &.child-6
+            animation-name: breeding-rhombus-spinner-animation-child-6
+            animation-delay: "calc(%s * 6)" % $delayModifier
+
+        &.child-7
+            animation-name: breeding-rhombus-spinner-animation-child-7
+            animation-delay: "calc(%s * 7)" % $delayModifier
+
+        &.child-8
+            animation-name: breeding-rhombus-spinner-animation-child-8
+            animation-delay: "calc(%s * 8)" % $delayModifier
+
+
+        &.big
+            height: "calc(%s / 3)" % $size
+            width: "calc(%s / 3)" % $size
+            animation-duration: $animationDuration
+            top: "calc(%s / 3)" % $size
+            left: "calc(%s / 3)" % $size
+            background-color: $color
+            animation: breeding-rhombus-spinner-animation-child-big $animationDuration infinite
+            animation-delay: 0.5s
+
+    @keyframes breeding-rhombus-spinner-animation-child-1 {
+        50% {
+            transform: translate(-325%, -325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-2 {
+        50% {
+            transform: translate(0, -325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-3 {
+        50% {
+            transform: translate(325%, -325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-4 {
+        50% {
+            transform: translate(325%, 0)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-5 {
+        50% {
+            transform: translate(325%, 325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-6 {
+        50% {
+            transform: translate(0, 325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-7 {
+        50% {
+            transform: translate(-325%, 325%)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-8 {
+        50% {
+            transform: translate(-325%, 0)
+        }
+    }
+    @keyframes breeding-rhombus-spinner-animation-child-big {
+        50% {
+            transform: scale(0.5)
+        }
+    }

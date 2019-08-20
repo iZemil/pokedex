@@ -1,0 +1,50 @@
+{
+    "name": "pokedex-backend",
+    "description": "express server",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev:build": "webpack --mode development --watch",
+        "dev:watch": "nodemon ./build/bundle.js",
+        "dev": "concurrently \"npm:dev:build\" \"npm:dev:watch\"",
+        "build": "webpack --mode production",
+        "start": "pm2 start ./build/bundle.js",
+        "stop": "pm2 stop all"
+    },
+    "engines": {
+        "node": "11.3.0"
+    },
+    "dependencies": {
+        "bcrypt": "^3.0.3",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "express-session": "^1.16.2",
+        "jsonwebtoken": "^8.4.0",
+        "mongoose": "^5.4.3",
+        "nodemon": "^1.19.1",
+        "passport": "^0.4.0",
+        "passport-github": "^1.1.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.6",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-preset-stage-1": "^6.5.0",
+        "clean-webpack-plugin": "^0.1.19",
+        "concurrently": "^4.1.1",
+        "dotenv": "^8.0.0",
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-import-resolver-webpack": "^0.11.1",
+        "eslint-plugin-import": "^2.17.3",
+        "file-loader": "^1.1.11",
+        "webpack": "^4.30.0",
+        "webpack-cli": "^3.0.8",
+        "webpack-node-externals": "^1.7.2"
+    }
+}

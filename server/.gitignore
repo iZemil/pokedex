@@ -1,0 +1,6 @@
+node_modules
+build
+# /security/dev.crt
+# /security/dev.key
+/singapore_app.pem
+package-lock.json

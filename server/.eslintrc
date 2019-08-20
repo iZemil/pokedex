@@ -1,0 +1,57 @@
+{
+    "extends": "airbnb-base",
+    "settings": {
+        "import/resolver": "webpack"
+    },
+    "rules": {
+        "indent": 0,
+        "class-methods-use-this": "off",
+        "curly": ["error", "all"],
+        "function-paren-newline": "off",
+        "global-require": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "import/no-extraneous-dependencies": "off",
+        "comma-dangle": ["error", "never"],
+        "no-console": [
+            "error",
+            {
+                "allow": ["warn", "error", "debug"]
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "no-plusplus": "off",
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allowAfterThis": true
+            }
+        ],
+        "no-restricted-properties": [
+            "off",
+            {
+                "object": "Math",
+                "property": "pow"
+            }
+        ],
+        "object-curly-newline": "off",
+        "padded-blocks": ["error", "never"],
+        "prefer-destructuring": "off",
+        "consistent-return": 1,
+        "import/prefer-default-export": "off",
+        "camelcase": 1,
+        "arrow-parens": 0,
+        "implicit-arrow-linebreak": 1
+    }
+}

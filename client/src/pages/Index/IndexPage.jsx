@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+import PokemonList from 'components/pokemon/List';
+
 import './Index.styl';
 
 function IndexPage() {
@@ -12,7 +14,7 @@ function IndexPage() {
 
     return (
         <div className="index-page">
-            <h1>Home page</h1>
+            <PokemonList />
         </div>
     );
 }

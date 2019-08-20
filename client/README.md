@@ -15,3 +15,11 @@ React application with key dependencies: react, mobx, react-router-4, antd
     3. Filter the pokemons by name with a search box
     4. Filter the pokemons by type using tags (multiple selected tags have to show pokemons with any of the types selected)
     5. ** Show your skills
+
+#### My notes about improvement:
+
+    1. Caching list of pokemons in localStorage
+    2. Define Proptypes
+    3. Eslint errors
+    4. More represented UI
+    5. and etc!

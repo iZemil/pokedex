@@ -64,7 +64,7 @@ function initRoutes(app) {
     app.get(
         '/auth/github/callback',
         passport.authenticate('github', { failureRedirect: '/error' }),
-        (req, res) => res.redirect('http://localhost:8080/profile')
+        (req, res) => res.redirect('http://62.109.23.130:8080/profile')
     );
 
     app.get('/user-auth', isAuth, (req, res) => {
